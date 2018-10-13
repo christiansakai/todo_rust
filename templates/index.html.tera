@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+
+    <title>Todo</title>
+
+    <meta name="description" content="A todo application written in Rocket.">
+    <meta name="author" content="Christian Sakai">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Hello World</h1>
+  </body>
+</html>

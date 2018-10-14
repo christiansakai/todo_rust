@@ -7,7 +7,7 @@
       Signup
     </h3>
 
-    <form action="/user" method="post">
+    <form action="/authenticate/signup" method="post">
       <div class="mt-2 mb-4">
         <label for="name" class="text-white block mb-2">
           Name

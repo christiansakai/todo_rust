@@ -9,8 +9,8 @@
     <meta name="author" content="Christian Sakai">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="/css/tailwind.css">
-    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="stylesheet" href="/static/css/tailwind.css">
+    <link rel="icon" type="image/png" href="/static/images/favicon.png">
   </head>
   <body>
     {% include "partials/header" %}

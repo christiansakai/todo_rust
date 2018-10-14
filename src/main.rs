@@ -21,16 +21,16 @@ fn index() -> Template {
 
 fn main() {
     rocket::ignite()
-        .mount("/", routes![
-               index, 
-               static_files::all,
-        ])
+        .mount("/", routes![index])
+        .mount("/static", routes![static_files::all])
         .mount("/todo", routes![
                todo::all,
                todo::new,
                todo::show,
         ])
         .mount("/authenticate", routes![
+               authenticate::render_signup,
+               authenticate::render_login,
                authenticate::signup,
                authenticate::login,
         ])

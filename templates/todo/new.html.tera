@@ -1,0 +1,36 @@
+{% extends "base" %}
+
+{% block body %}
+<div class="p-4">
+  <div class="p-4 bg-teal">
+    <h3 class="text-white font-light mb-8">
+      What will you do before you die?
+    </h3>
+
+    <form action="/todo" method="post">
+      <div class="mt-2 mb-4">
+        <label for="title" class="text-white block mb-2">
+          Title
+        </label>
+        <input type="text" class="w-full p-2">
+      </div>
+
+      <div class="mt-2 mb-4">
+        <label for="description" class="text-white block mb-2">
+          Description
+        </label>
+        <textarea cols="50" rows="10" class="w-full"></textarea>
+      </div>
+
+      <div class="mt-4 text-center">
+        <button
+          type="submit"
+          class="bg-white text-black rounded p-4 no-underline"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock body %}

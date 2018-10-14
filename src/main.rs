@@ -11,6 +11,8 @@ use std::collections::HashMap;
 use rocket_contrib::Template;
 
 mod static_files;
+mod todo;
+mod authenticate;
 
 #[get("/")]
 fn index() -> Template {
@@ -20,8 +22,17 @@ fn index() -> Template {
 fn main() {
     rocket::ignite()
         .mount("/", routes![
-               index,
+               index, 
                static_files::all,
+        ])
+        .mount("/todo", routes![
+               todo::all,
+               todo::new,
+               todo::show,
+        ])
+        .mount("/authenticate", routes![
+               authenticate::signup,
+               authenticate::login,
         ])
         .attach(Template::fairing())
         .launch();

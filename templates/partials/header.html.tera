@@ -1,1 +1,26 @@
-<h1>Header</h1>
+<div class="bg-teal p-4 flex justify-between">
+  <div>
+    <a
+      class="text-white font-bold text-xl no-underline"
+      href="/"
+    >
+      Todo
+    </a>
+  </div>
+
+  <div>
+    <a
+      class="text-white font-light text-xl no-underline"
+      href="/authenticate/login"
+    >
+      Login
+    </a>
+
+    <a
+      class="text-white font-light text-xl no-underline"
+      href="/authenticate/signup"
+    >
+      Signup
+    </a>
+  </div>
+</div>

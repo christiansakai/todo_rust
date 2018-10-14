@@ -1,5 +1,17 @@
 {% extends "base" %}
 
 {% block body %}
-<h1>HELLO WORLD</h1>
+<div class="py-12">
+  <h1 class="text-black text-center">Welcome to Todo</h1>
+  <p class="text-black text-center">What will you do before you die?</p>
+
+  <div class="text-center mt-10">
+    <a
+      class="bg-teal text-xl text-white rounded p-4 no-underline"
+      href="/todo"
+    >
+      Get Started!
+    </a>
+  </div>
+</div>
 {% endblock body %}

@@ -1,0 +1,37 @@
+{% extends "base" %}
+
+{% block body %}
+<div class="p-4">
+  <div class="p-4 bg-teal">
+    <h3 class="text-white text-center font-light mb-2">
+      Programming
+    </h3>
+
+    <p class="text-white mb-2">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+
+    <div class="text-center">
+      <form class="inline-block" action="/todo/id" method="post">
+        <input type="hidden" name="_method" value="put">
+        <button
+          type="submit"
+          class="bg-blue text-white rounded p-4 no-underline"
+        >
+          Done
+        </button>
+      </form>
+
+      <form class="inline-block" action="/todo/id" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button
+          type="submit"
+          class="bg-orange text-white rounded p-4 no-underline"
+        >
+          Delete
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock body %}

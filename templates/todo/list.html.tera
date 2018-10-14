@@ -1,0 +1,40 @@
+{% extends "base" %}
+
+{% block body %}
+<div class="p-4">
+  <div class="py-8 px-4 bg-teal">
+    <h3 class="text-white font-light mb-8">
+      What will you do before you die?
+    </h3>
+
+    <a
+      class="bg-white text-black rounded p-4 no-underline"
+      href="/todo/new"
+    >
+      Add Todo
+    </a>
+  </div>
+
+  <div class="mt-2 flex-wrap flex justify-start">
+    <div class="bg-teal inline-block p-4 mt-2 mr-2">
+      <a class="text-white no-underline" href="/todo/id">Programming</a>
+    </div>
+
+    <div class="bg-teal inline-block p-4 mt-2 mr-2">
+      <a class="text-white">Chores</a>
+    </div>
+
+    <div class="bg-teal inline-block p-4 mt-2 mr-2">
+      <a class="text-white">Aquascape</a>
+    </div>
+      
+    <div class="bg-teal inline-block p-4 mt-2 mr-2">
+      <a class="text-white">Karate</a>
+    </div>
+        
+    <div class="bg-teal inline-block p-4 mt-2 mr-2">
+      <a class="text-white">Music</a>
+    </div>
+  </div>
+</div>
+{% endblock body %}

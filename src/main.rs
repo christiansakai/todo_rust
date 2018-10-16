@@ -4,35 +4,34 @@
 extern crate rocket_contrib;
 extern crate rocket;
 
-#[macro_use] extern crate serde_derive;
+#[macro_use]
+extern crate serde_derive;
 extern crate serde;
+
+#[macro_use]
+extern crate diesel;
+extern crate dotenv;
 
 use std::collections::HashMap;
 use rocket_contrib::Template;
 
-mod static_files;
-mod todo;
-mod authenticate;
-
-#[get("/")]
-fn index() -> Template {
-    Template::render("index", HashMap::<String, String>::new())
-}
+mod db;
+mod routes;
 
 fn main() {
     rocket::ignite()
-        .mount("/", routes![index])
-        .mount("/static", routes![static_files::all])
+        .mount("/", routes![routes::index::index])
+        .mount("/static", routes![routes::static_files::all])
         .mount("/todo", routes![
-               todo::all,
-               todo::new,
-               todo::show,
+               routes::todo::all,
+               routes::todo::new,
+               routes::todo::show,
         ])
         .mount("/authenticate", routes![
-               authenticate::render_signup,
-               authenticate::render_login,
-               authenticate::signup,
-               authenticate::login,
+               routes::authenticate::render_signup,
+               routes::authenticate::render_login,
+               routes::authenticate::signup,
+               routes::authenticate::login,
         ])
         .attach(Template::fairing())
         .launch();

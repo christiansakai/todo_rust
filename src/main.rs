@@ -12,14 +12,23 @@ extern crate serde;
 extern crate diesel;
 extern crate dotenv;
 
-use std::collections::HashMap;
 use rocket_contrib::Template;
+use dotenv::dotenv;
+use std::collections::HashMap;
+use std::env;
 
 mod db;
 mod routes;
 
 fn main() {
+    dotenv().ok();
+    let database_url = env::var("DATABASE_URL")
+        .expect("DATABASE_URL must be set");
+
+    let conn_pool = db::init_pool(&database_url);
+
     rocket::ignite()
+        .manage(conn_pool)
         .mount("/", routes![routes::index::index])
         .mount("/static", routes![routes::static_files::all])
         .mount("/todo", routes![

@@ -2,8 +2,12 @@ use std::collections::HashMap;
 use rocket_contrib::Template;
 use rocket::response::Redirect;
 
+use self::super::super::db;
+use self::super::super::db::models;
+
 #[get("/")]
-fn all() -> Template {
+fn all(conn: db::DbConn) -> Template {
+    models::Todo::all(&conn);
     Template::render("todo/list", HashMap::<String, String>::new())
 }
 

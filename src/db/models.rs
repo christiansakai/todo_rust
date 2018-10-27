@@ -3,7 +3,6 @@ use diesel::prelude::*;
 use diesel::pg::PgConnection;
 
 use super::schema::todos;
-use super::schema::todos::dsl;
 
 #[derive(Insertable)]
 #[table_name="todos"]
@@ -30,5 +29,11 @@ impl<'a> NewTodo<'a> {
 
 impl Todo {
     pub fn all(db_conn: &PgConnection) -> Vec<Todo> {
+        use super::schema::todos::dsl;
+        todos::table
+            .load(db_conn)
+            .expect("Error oading todos")
     }
+
+    pub fn toggle(db_conn: &PgConnection)
 }

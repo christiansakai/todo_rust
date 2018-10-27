@@ -19,7 +19,7 @@ pub fn init_pool(database_url: &str) -> PgPool {
         .expect(&format!("Error connecting to {}", database_url))
 }
 
-struct DbConn(PooledConnection<ConnectionManager<PgConnection>>);
+pub struct DbConn(PooledConnection<ConnectionManager<PgConnection>>);
 
 impl<'a, 'r> FromRequest<'a, 'r> for DbConn {
     type Error = ();
